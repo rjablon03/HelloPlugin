@@ -3,6 +3,7 @@ package com.example.helloplugin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+import java.time.LocalDateTime;
 
 public class HelloPlugin extends JavaPlugin {
 
@@ -30,6 +31,14 @@ public class HelloPlugin extends JavaPlugin {
         if (command.getName().equalsIgnoreCase("hello")) {
 
             sender.sendMessage("Hello from my Paper plugin!");
+
+            return true;
+        }
+
+        else if (command.getName().equalsIgnoreCase("currdatetime")) {
+
+            LocalDateTime currentTime = LocalDateTime.now();
+            sender.sendMessage("The current time is " + currentTime);
 
             return true;
         }
